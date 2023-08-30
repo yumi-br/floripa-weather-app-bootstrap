@@ -34,6 +34,15 @@ let month = months[now.getMonth()];
 
 h3.innerHTML = `${day}, ${month} ${date}, ${year}, ${hours}:${minutes}`;
 
+function toggleF() {
+  let f = document.getElementById("forecast-content");
+  if (f.style.display === "none") {
+    f.style.display = "block";
+  } else {
+    f.style.display = "none";
+  }
+}
+
 function displayWeatherCondition(response) {
   console.log(response.data);
   let city = response.data.name;

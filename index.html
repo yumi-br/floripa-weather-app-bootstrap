@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Floripa Weather App</title>
+    <title>Floripa Weather App Bootstrap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     
     <script
@@ -96,70 +96,25 @@
                 </div>
               </div>
               
-             
-              <div id="forecast-content" class="forecast-content">
-                <div class="forecast-title">5-day Forecast</div>
-                    <div class="forecast-day1">
-                      <span class="weekday1"><h6>Fri</h6></span>
-                      <span class="date1"><h6>14</h6></span>
-                      <p class="day1-high-temp"><h5><strong>26º</strong></h5></p>
-                      <p class="day1-low-temp"><h6>15º</h6></p>
-                      <img src="IconSet/icon16-50.png" alt="Sun icon">
-                    </div>
-
-                    <div class="vertical"></div>
-                    
-                    <div class="forecast-day2">
-                      <span class="weekday2"><h6>Sat</h6></span>
-                      <span class="date2"><h6>15</h6></span>
-                      <p class="day2-high-temp"><h5><strong>22º</strong></h5></p>
-                      <p class="day2-low-temp"><h6>14º</h6></p>
-                      <img src="IconSet/icon14-50.png" alt="Cloud icon">
-                    </div>
-                    
-                    <div class="vertical"></div>
-              
-                    <div class="forecast-day3">
-                      <span class="weekday3"><h6>Sun</h6></span>
-                      <span class="date3"><h6>16</h6></span>
-                      <p class="day3-high-temp"><h5><strong>21º</strong></h5></p>
-                      <p class="day3-low-temp"><h6>13º</h6></p>
-                      <img src="IconSet/icon15-50.png" alt="Cloud and sun icon">
-                    </div>
-                                        
-                    <div class="vertical"></div>
-                                        
-                    <div class="forecast-day4">
-                      <span class="weekday4"><h6>Mon</h6></span>
-                      <span class="date4"><h6>17</h6></span>
-                      <p class="day4-high-temp"><h5><strong>18º</strong></h5></p>
-                      <p class="day4-low-temp"><h6>12º</h6></p>
-                      <img src="IconSet/icon17-50.png" alt="Cloud and rain icon">
-                    </div>
-                    
-                    <div class="vertical"></div>
- 
-                    <div class="forecast-day5">
-                      <span class="weekday5"><h6>Tue</h6></span>
-                      <span class="date5"><h6>18</h6></span>
-                      <p class="day5-high-temp"><h5><strong>17º</strong></h5></p>
-                      <p class="day5-low-temp"><h6>10º</h6></p>
-                      <img src="IconSet/icon18-50.png" alt="Cloud icon">
-                    </div>
-                    
-                  </div>
-          
+              <div class="card-forecast">
+                <button class="forecast-button" id="forecast-button" onclick="toggleF()">
+                  5-day Forecast
+                </button>
+              </div>
+               
+              <div class="weather-forecast" id="forecast"></div>
+              <div class="vertical"></div>
         
       </div>
     </div>
   </div>
       
+  <footer>
+    <small>
+      This project was happily coded by <a target="_blank" href="https://www.linkedin.com/in/yumi-aline-inoue-450650267/" rel="noreferrer">Yumi</a>. It is <a target="_blank" href="https://github.com/yumi-br/floripa-weather-app-bootstrap" rel="noreferrer"> open source on GitHub</a> and <a target="_blank" href="https://sweet-trifle-d41179.netlify.app/" rel="noreferrer">hosted on Netlify</a>.
+    </small>
+  </footer>
     </div>
-    <footer>
-      <small>
-        This project was happily coded by <a target="_blank" href="https://www.linkedin.com/in/yumi-aline-inoue-450650267/" rel="noreferrer">Yumi</a>. It is <a target="_blank" href="https://github.com/yumi-br/floripa-weather-app" rel="noreferrer"> open source on GitHub</a> and <a target="_blank" href="https://lovely-moxie-33561d.netlify.app/" rel="noreferrer">hosted on Netlify</a>.
-      </small>
-    </footer>
   </body>
   <script src="src/script.js"></script>
 </html>

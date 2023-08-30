@@ -291,14 +291,23 @@ p {
   padding: 0 auto 50px;
 }
 
-.forecast-title {
-  font-size: 36px;
-  font-weight: 600;
+.forecast-button {
+  text-align: center;
+  background: rgb(34, 97, 255);
+  border-radius: 50px;
+  border: none;
+  width: 400px;
+  padding: 20px;
+  display: block;
+  margin: 0 auto 10px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
 }
 
 div#forecast-content {
   width: 650px;
-  display: block;
+  display: none;
   color: #010645;
   background-color: rgb(122, 155, 240);
   padding: 20px;
