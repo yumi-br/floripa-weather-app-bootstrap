@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floripa Weather App</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    
+    <script
+      src="https://kit.fontawesome.com/1bbc2ffe13.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="search">
+          <form class="search-form" id="search-form">
+            <input
+              type="text"
+              class="city-input"
+              placeholder="Enter a City..."
+              autocomplete="off"
+              autofocus="on"
+              id="city-input"
+            />
+            <button type="submit" class="search-button">
+              Search <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            
+            <button type="button" id="current-location-button" class="location-button">My Location <i class="fa-solid fa-location-dot"></i> 
+            </button>
+          </form>
+        </div>
+
+        <div class="card-default-cities">
+          <h4>
+            <ul class="default-cities">
+              <li class="menu-city"><a href="#" id="menu-city-1">Eastbourne</a></li>
+              <li class="menu-city"><a href="#" id="menu-city-2">Florianópolis</a></li>
+              <li class="menu-city"><a href="#" id="menu-city-3">Nagoya</a></li>
+              <li class="menu-city"><a href="#" id="menu-city-4">Utrecht</a></li>
+            </ul>
+          </h4>
+        </div>
+
+        <div class="card-body">
+          <div class="card-current-weather">
+            <div class="location" id="location">
+              <h1 class="city" id="city"></h1>
+              <h1 class="country" id="country"></h1>
+            </div>
+            <h3 class="date-time" id="date-time"></h3>
+            <img src="" alt="" id="icon" class="weather-icon" />
+
+            <h2>
+              <span class="temperature" id="temperature"></span>
+              <span class="units">
+                <a href="#" id="celsius-link" class="active">°C</a> |
+                <a href="#" id="fahrenheit-link">°F</a>
+              </span>
+            </h2>
+
+            <h3 class="weather-description" id="weather-description">
+                  
+            </h3>
+            <p id="sentence-description" class="sentence-description"></p>
+          </div>
+
+              <div class="wrapper">
+                <div class="row1-col1">
+                  <img src="IconSet/icon1-50.png" alt="Thermomether icon" class="row1-col1-icon">
+                  <span class="row1-col1-description">Low|High</span>
+                  <span class="row1-col1-info"><strong><span id="temp-min">15</span> | <span id="temp-max">28</span></strong></span>
+                </div>
+                
+                <div class="row1-col2">
+                  <img src="IconSet/icon2-50.png" alt="Drop icon" class="row1-col2-icon">
+                  <span class="row1-col2-description">Humidity</span>
+                  <span class="row1-col2-info"><strong><span id="humidity"></span>%</strong></span>
+                </div>
+
+                <div class="row2-col1">
+                  <img src="IconSet/icon3-50.png" alt="Wind icon" class="row2-col1-icon">
+                  <span class="row2-col1-description">Wind</span>
+                  <span class="row2-col1-info1"><strong><span id="wind-deg"></span><img src="IconSet/icon19-30.png" id="arrow"></span>
+                  <span class="row2-col1-info2"><span id=wind-speed></span>km/h</strong></span>
+                </div>
+                
+                <div class="row2-col2">
+                  <img src="IconSet/icon22-50.png" alt="Pressure icon" class="row2-col2-icon">
+              
+                  <span class="row2-col2-description">Pressure</span>
+                  <span class="row2-col2-info"><strong><span id="pressure"></span> hPa</strong></span>
+                </div>
+              </div>
+              
+             
+              <div id="forecast-content" class="forecast-content">
+                <div class="forecast-title">5-day Forecast</div>
+                    <div class="forecast-day1">
+                      <span class="weekday1"><h6>Fri</h6></span>
+                      <span class="date1"><h6>14</h6></span>
+                      <p class="day1-high-temp"><h5><strong>26º</strong></h5></p>
+                      <p class="day1-low-temp"><h6>15º</h6></p>
+                      <img src="IconSet/icon16-50.png" alt="Sun icon">
+                    </div>
+
+                    <div class="vertical"></div>
+                    
+                    <div class="forecast-day2">
+                      <span class="weekday2"><h6>Sat</h6></span>
+                      <span class="date2"><h6>15</h6></span>
+                      <p class="day2-high-temp"><h5><strong>22º</strong></h5></p>
+                      <p class="day2-low-temp"><h6>14º</h6></p>
+                      <img src="IconSet/icon14-50.png" alt="Cloud icon">
+                    </div>
+                    
+                    <div class="vertical"></div>
+              
+                    <div class="forecast-day3">
+                      <span class="weekday3"><h6>Sun</h6></span>
+                      <span class="date3"><h6>16</h6></span>
+                      <p class="day3-high-temp"><h5><strong>21º</strong></h5></p>
+                      <p class="day3-low-temp"><h6>13º</h6></p>
+                      <img src="IconSet/icon15-50.png" alt="Cloud and sun icon">
+                    </div>
+                                        
+                    <div class="vertical"></div>
+                                        
+                    <div class="forecast-day4">
+                      <span class="weekday4"><h6>Mon</h6></span>
+                      <span class="date4"><h6>17</h6></span>
+                      <p class="day4-high-temp"><h5><strong>18º</strong></h5></p>
+                      <p class="day4-low-temp"><h6>12º</h6></p>
+                      <img src="IconSet/icon17-50.png" alt="Cloud and rain icon">
+                    </div>
+                    
+                    <div class="vertical"></div>
+ 
+                    <div class="forecast-day5">
+                      <span class="weekday5"><h6>Tue</h6></span>
+                      <span class="date5"><h6>18</h6></span>
+                      <p class="day5-high-temp"><h5><strong>17º</strong></h5></p>
+                      <p class="day5-low-temp"><h6>10º</h6></p>
+                      <img src="IconSet/icon18-50.png" alt="Cloud icon">
+                    </div>
+                    
+                  </div>
+          
+        
+      </div>
+    </div>
+  </div>
+      
+    </div>
+    <footer>
+      <small>
+        This project was happily coded by <a target="_blank" href="https://www.linkedin.com/in/yumi-aline-inoue-450650267/" rel="noreferrer">Yumi</a>. It is <a target="_blank" href="https://github.com/yumi-br/floripa-weather-app" rel="noreferrer"> open source on GitHub</a> and <a target="_blank" href="https://lovely-moxie-33561d.netlify.app/" rel="noreferrer">hosted on Netlify</a>.
+      </small>
+    </footer>
+  </body>
+  <script src="src/script.js"></script>
+</html>
