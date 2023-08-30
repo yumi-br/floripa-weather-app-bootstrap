@@ -35,7 +35,7 @@ let month = months[now.getMonth()];
 h3.innerHTML = `${day}, ${month} ${date}, ${year}, ${hours}:${minutes}`;
 
 function toggleF() {
-  let f = document.getElementById("forecast-content");
+  let f = document.getElementById("forecast");
   if (f.style.display === "none") {
     f.style.display = "block";
   } else {

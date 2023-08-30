@@ -305,44 +305,6 @@ p {
   cursor: pointer;
 }
 
-div#forecast-content {
-  width: 650px;
-  display: none;
-  color: #010645;
-  background-color: rgb(122, 155, 240);
-  padding: 20px;
-  border-radius: 50px;
-  border: none;
-  margin: 1px auto 20px;
-}
-
-.forecast-content {
-  display: grid;
-  column-gap: 20px;
-  row-gap: 0;
-  padding: 0;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 16px;
-  color: #010645;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.forecast-day1,
-.forecast-day2,
-.forecast-day3,
-.forecast-day4,
-.forecast-day5 {
-  background: rgb(122, 155, 240);
-  border-radius: 30px;
-  border: none;
-  width: 85px;
-  padding: 25px 10px;
-  display: block;
-  margin-bottom: 10px;
-  display: inline-block;
-}
-
 h5 {
   font-size: 30px;
   padding: 0;
@@ -365,7 +327,7 @@ h6 {
 
 footer {
   text-align: center;
-  padding: 5px;
+  text-decoration: none;
   color: #010645;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
@@ -374,4 +336,9 @@ footer {
 footer a {
   color: #7da1fa;
   text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: #010645;
 }
