@@ -34,6 +34,10 @@ let month = months[now.getMonth()];
 
 h3.innerHTML = `${day}, ${month} ${date}, ${year}, ${hours}:${minutes}`;
 
+function displayForecast(response) {
+  let forecast = response.data.daily;
+}
+
 function toggleF() {
   let f = document.getElementById("forecast");
   if (f.style.display === "none") {
