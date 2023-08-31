@@ -34,27 +34,60 @@ let month = months[now.getMonth()];
 
 h3.innerHTML = `${day}, ${month} ${date}, ${year}, ${hours}:${minutes}`;
 
-function displayForecast(response) {
-  let forecast = response.data.daily;
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
 }
 
-function toggleF() {
-  let f = document.getElementById("forecast");
-  if (f.style.display === "none") {
-    f.style.display = "block";
-  } else {
-    f.style.display = "none";
-  }
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+        <div class="col-2">
+            <div class="weather-forecast-date">${formatDay(
+              forecastDay.dt
+            )}</div>
+            <img src="https://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png" alt="" width="42" />
+            <div class="weather-forecast-temperatures">
+                <span class="weather-forecast-temperature-max"> ${Math.round(
+                  forecastDay.temp.max
+                )}° </span>
+                <span class="weather-forecast-temperature-min"> ${Math.round(
+                  forecastDay.temp.min
+                )}° </span>
+            </div>
+        </div>
+  `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
 }
 
 function getForecast(coordinates) {
-  let apiKey = "cd173a006b0e51dac58c6d8064c94178";
+  let apiKey = "515c9ddbeb3cda9061acfab71031839e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
-function displayWeatherCondition(response) {
+function displayTemperature(response) {
   console.log(response.data);
   let city = response.data.name;
   let country = response.data.sys.country;
@@ -91,7 +124,7 @@ function displayWeatherCondition(response) {
 function searchCity(city) {
   let apiKey = "127b5ec2f6d0997638b7af4846d15bfb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 function handleSubmit(event) {
@@ -105,7 +138,7 @@ function searchLocation(position) {
   let apiKey = "127b5ec2f6d0997638b7af4846d15bfb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
-  axios.get(apiUrl).then(displayWeatherCondition);
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 function getCurrentLocation(event) {
@@ -148,28 +181,28 @@ function displayCityOneWeather(event) {
   event.preventDefault();
   let apiKey = "127b5ec2f6d0997638b7af4846d15bfb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=eastbourne&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 function displayCityTwoWeather(event) {
   event.preventDefault();
   let apiKey = "127b5ec2f6d0997638b7af4846d15bfb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=florianopolis&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 function displayCityFourWeather(event) {
   event.preventDefault();
   let apiKey = "127b5ec2f6d0997638b7af4846d15bfb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=utrecht&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 function displayCityThreeWeather(event) {
   event.preventDefault();
   let apiKey = "127b5ec2f6d0997638b7af4846d15bfb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=nagoya&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 let celsiusTemperature = null;

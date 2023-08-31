@@ -291,20 +291,6 @@ p {
   padding: 0 auto 50px;
 }
 
-.forecast-button {
-  text-align: center;
-  background: rgb(34, 97, 255);
-  border-radius: 50px;
-  border: none;
-  width: 400px;
-  padding: 20px;
-  display: block;
-  margin: 0 auto 10px;
-  color: white;
-  font-size: 40px;
-  cursor: pointer;
-}
-
 h5 {
   font-size: 30px;
   padding: 0;
