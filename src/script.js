@@ -43,6 +43,13 @@ function toggleF() {
   }
 }
 
+function getForecast(coordinates) {
+  let apiKey = "cd173a006b0e51dac58c6d8064c94178";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeatherCondition(response) {
   console.log(response.data);
   let city = response.data.name;
@@ -73,6 +80,8 @@ function displayWeatherCondition(response) {
   The minimum temperature will be ${tempMinData}°C and <br>
   the maximum temperature will be ${tempMaxData}°C.`;
   celsiusLink.classList.add("active");
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
