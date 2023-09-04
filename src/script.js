@@ -107,7 +107,7 @@ function displayFahrenheitForecast(response) {
 
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
@@ -151,7 +151,7 @@ function getFahrenheitForecast(coordinates) {
   let apiKey = "515c9ddbeb3cda9061acfab71031839e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
-  axios.get(apiUrl).then(displayFahrenheitForecast);
+  axios.get(apiUrl).then(displayFahrenheitForecast(response));
 }
 
 function displayTemperature(response) {
@@ -230,7 +230,7 @@ function displayFahrenheitTemperature(event) {
   tempMinElement.innerHTML = `${fahrenheitMinTemperature}°F`;
   tempMaxElement.innerHTML = `${fahrenheitMaxTemperature}°F`;
 
-  getFahrenheitForecast(response.data.cood);
+  getFahrenheitForecast(response.data.coord);
 }
 
 function displayCelsiusTemperature(event) {
