@@ -109,7 +109,7 @@ function displayTemperature(response) {
 
   tempMinData = Math.round(response.data.main.temp_min);
   tempMaxData = Math.round(response.data.main.temp_max);
-  feelsLike = Math.round(response.data.main.feels_like);
+  feelsLikeData = Math.round(response.data.main.feels_like);
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   locationElement.innerHTML = `${city} ${country}`;
   iconElement.setAttribute(
@@ -124,7 +124,7 @@ function displayTemperature(response) {
   pressureElement.innerHTML = `${response.data.main.pressure}`;
   descriptionElement.innerHTML = weatherDescription;
   sentenceElement.innerHTML = `${weatherDescription} today in ${city}. <br>
-  The temperature right now feels like ${feelsLike}°C.`;
+  The temperature right now feels like ${feelsLikeData}°C.`;
   celsiusLink.classList.add("active");
 
   displayDateTime();
