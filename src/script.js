@@ -61,19 +61,6 @@ function displayForecast(response) {
 
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
 
-  tempMinDay0 = Math.round(response.data.daily[0].temp.min);
-  tempMaxDay0 = Math.round(response.data.daily[0].temp.max);
-  tempMinDay1 = Math.round(response.data.daily[1].temp.min);
-  tempMaxDay1 = Math.round(response.data.daily[1].temp.max);
-  tempMinDay2 = Math.round(response.data.daily[2].temp.min);
-  tempMaxDay2 = Math.round(response.data.daily[2].temp.max);
-  tempMinDay3 = Math.round(response.data.daily[3].temp.min);
-  tempMaxDay3 = Math.round(response.data.daily[3].temp.max);
-  tempMinDay4 = Math.round(response.data.daily[4].temp.min);
-  tempMaxDay4 = Math.round(response.data.daily[4].temp.max);
-  tempMinDay5 = Math.round(response.data.daily[5].temp.min);
-  tempMaxDay5 = Math.round(response.data.daily[5].temp.max);
-
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
