@@ -1,38 +1,48 @@
-let now = new Date();
-let h3 = document.querySelector("h3.date-time");
-let date = now.getDate();
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let year = now.getFullYear();
-let seconds = now.getSeconds();
-if (seconds < 10) {
-  seconds = `0${seconds}`;
-}
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[now.getDay()];
-let months = [
-  "Jan",
-  "Feb",
-  "March",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = months[now.getMonth()];
+function displayDateTime() {
+  let now = new Date();
+  let dateTimeElement = document.querySelector("#date-time");
+  let date = now.getDate();
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let year = now.getFullYear();
+  let seconds = now.getSeconds();
+  if (seconds < 10) {
+    seconds = `0${seconds}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[now.getMonth()];
 
-h3.innerHTML = `${day}, ${month} ${date}, ${year}, ${hours}:${minutes}`;
+  dateTimeElement.innerHTML = `${day}, ${month} ${date}, ${year}, <strong>${hours}:${minutes}`;
+}
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -63,11 +73,11 @@ function displayForecast(response) {
               forecastDay.weather[0].icon
             }@2x.png" alt="" width="42" />
             <div class="weather-forecast-temperatures">
-                <span class="weather-forecast-temperature-max"> ${Math.round(
-                  forecastDay.temp.max
-                )}° </span>
                 <span class="weather-forecast-temperature-min"> ${Math.round(
                   forecastDay.temp.min
+                )}° </span>
+                <span class="weather-forecast-temperature-max"> ${Math.round(
+                  forecastDay.temp.max
                 )}° </span>
             </div>
         </div>
@@ -110,15 +120,14 @@ function displayTemperature(response) {
   tempMinElement.innerHTML = `${tempMinData}°C`;
   humidityElement.innerHTML = response.data.main.humidity;
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
-  windDegElement.innerHTML = `${response.data.wind.deg}deg`;
   pressureElement.innerHTML = `${response.data.main.pressure}`;
   descriptionElement.innerHTML = weatherDescription;
   sentenceElement.innerHTML = `${weatherDescription} today in ${city}. <br>
   The minimum temperature will be ${tempMinData}°C and <br>
   the maximum temperature will be ${tempMaxData}°C.`;
   celsiusLink.classList.add("active");
-  h3.innerHTML = `${day}, ${month} ${date}, ${year}, ${hours}:${minutes}`;
 
+  displayDateTime();
   getForecast(response.data.coord);
 }
 

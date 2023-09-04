@@ -1,90 +1,21 @@
-html {
-  color: #fbf9ef;
-}
-
-h2,
-h3,
-h4,
-h6,
-p,
-.location {
-  font-weight: 400;
+body {
+  font-family: Arial, Helvetica, sans-serif;
   color: #010645;
 }
 
-h4 {
-  font-size: 14px;
-  margin-top: 10px;
-  margin-bottom: 0;
+h2 {
+  display: inline;
 }
 
-.fa-magnifying-glass {
-  border-radius: 20px;
-  color: #06509a;
+.weather-app-wrapper {
+  max-width: 800px;
+  margin: 10px auto 0;
 }
 
-.fa-location-dot {
-  border-radius: 20px;
-  color: #036e12;
-}
-
-.container {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-.box {
-  margin-top: 50px;
-  margin-bottom: 30px;
-  background: radial-gradient(#bfd1ff, #afc5fe);
-
-  border-radius: 50px;
-  border: none;
-  width: 800px;
-  padding: 5px;
-  display: block;
-  margin: 5px auto;
-}
-
-.search {
-  text-align: center;
-  display: block;
-  margin: 30px auto;
-}
-
-.city-input {
-  padding: 8px 16px 8px 16px;
-  border: 5px rgb(10, 132, 255);
-  border-style: none;
-  border-radius: 10px;
-  font-style: italic;
-  font-size: medium;
-}
-
-.search-button {
-  border-radius: 10px;
-  background-color: #0a84ff;
-  border: 5px #0a84ff;
-  color: white;
-  padding: 8px 16px 8px 16px;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: medium;
-}
-
-.location-button {
-  border-radius: 10px;
-  border: 5px #05b41c;
-  background-color: #05b41c;
-  color: white;
-  padding: 8px 16px 8px 16px;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: medium;
-}
-
-.search-form {
-  margin-top: 50px;
+.weather-app {
+  padding: 10px;
+  border: 1px solid #dadde1;
+  border-radius: 15px;
 }
 
 .card-default-cities {
@@ -93,119 +24,97 @@ h4 {
   border-radius: 20px;
   border: none;
   width: 700px;
-  padding: 1px;
+  padding: 10px;
   display: block;
-  margin: 20px auto 30px;
+  margin: 5px auto 15px;
 }
 
-.menu-city {
-  list-style-type: none;
-  display: inline;
-  margin: 7%;
+.default-cities {
   text-align: center;
+  font-size: small;
 }
 
-.menu-city a {
-  text-decoration: none;
+.search-form {
+  padding-left: 40px;
 }
 
-.menu-city a:visited {
-  text-decoration: none;
-  color: #203456;
+.date-time {
+  text-align: center;
+  font-size: large;
+  font-weight: 400;
 }
 
-.florianopolis {
-  text-decoration: none;
-}
-
-.card-current-weather {
+.current-weather {
   background: rgb(165, 189, 251);
   border-radius: 30px;
   border: none;
   width: 700px;
-  padding: 1px;
+  padding: 15px;
   display: block;
-  margin: 30px auto 5px;
+  margin: 10px auto 5px;
   text-align: center;
+  margin: 10px auto 15px;
 }
 
 .location {
-  font-size: 40px;
-  font-weight: 600;
-  margin-top: 30px;
-  margin-bottom: 0;
-  text-align: center;
+  font-size: xx-large;
+  font-weight: 400;
 }
 
-h3.date-time {
-  font-size: 30px;
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: -20px;
+.current-weather img {
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
 }
 
-.weather-icon {
-  padding: 30px;
-  display: block;
-  display: block;
-  margin: 0 auto;
+footer {
+  text-align: center;
+  padding: 5px;
+  color: #010645;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
 }
 
-h2 {
-  text-align: center;
-  font-size: 80px;
-  padding-left: 50px;
-  margin-top: -60px;
-  margin-bottom: 0;
+footer a {
+  color: rgba(1, 6, 69, 70%);
+  text-decoration: none;
 }
 
-.temperature {
-  text-align: center;
+.current-weather .temperature {
+  color: #010645;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 400;
 }
-.card-current-weather .units {
+
+.current-weather .units {
   position: relative;
   font-size: 16px;
-  top: -44px;
-  margin-left: -20px;
+  top: -34px;
 }
 
-.card-current-weather .active {
-  color: #010645;
+.current-weather .active {
+  color: rgb(33, 33, 33);
   cursor: default;
   text-decoration: none;
 }
 
-.card-current-weather .active:hover {
+.current-weather .active:hover {
   text-decoration: none;
 }
 
-h3.weather-description {
-  font-size: 32px;
-  text-align: center;
-  margin: 0;
+a {
+  text-decoration: none;
+  color: #010645;
 }
 
-p {
-  font-size: 16px;
-  text-align: center;
-  margin: 20px auto 40px;
-}
-
-.card-today-details {
-  border-radius: 50px;
-  border: none;
-  width: 700px;
-  padding: 1px;
-  display: block;
-  margin: 5px auto 30px;
-}
-
-.wrapper {
+.weather-details-1,
+.weather-details-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 10px;
+  column-gap: 20px;
   row-gap: 0;
-  padding: 20px;
+  padding: 2px;
   margin: 0 auto;
   font-size: 16px;
   color: #010645;
@@ -217,40 +126,30 @@ p {
 .row2-col1,
 .row2-col2 {
   background: rgb(122, 155, 240);
-  border-radius: 30px;
+  border-radius: 20px;
   border: none;
-  width: 305px;
-  padding: 25px 20px;
+  padding: 10px 20px;
+  width: 300px;
   display: block;
   margin-bottom: 10px;
 }
 
-.row1-col1,
-.row2-col1 {
-  margin-left: 30px;
-}
-
-.row1-col2,
-.row2-col2 {
-  margin-right: 30px;
-}
-
 .row1-col1-icon {
-  margin-left: -5px;
-  width: 60px;
   vertical-align: middle;
+  margin-left: -25px;
+  width: 40px;
 }
 
 .row1-col1-description {
-  margin-left: 1px;
+  margin-left: -20px;
 }
 
 .row1-col1-info {
-  padding-left: 50px;
+  padding-left: 20px;
 }
 
 .row1-col2-icon {
-  margin-left: -5px;
+  margin-left: -50px;
   vertical-align: middle;
 }
 
@@ -259,19 +158,20 @@ p {
 }
 
 .row1-col2-info {
-  padding-left: 130px;
+  padding-left: 100px;
 }
 
 .row2-col1-icon {
   vertical-align: middle;
+  margin-left: -50px;
 }
 
 .row2-col1-description {
   vertical-align: middle;
 }
 
-.row2-col1-info1 {
-  padding-left: 60px;
+.row2-col1-info {
+  padding-left: 150px;
 }
 
 .row2-col2-icon {
@@ -288,43 +188,17 @@ p {
 }
 
 .card-forecast {
-  padding: 0 auto 50px;
-}
-
-h5 {
-  font-size: 30px;
-  padding: 0;
-  margin: 0;
-}
-
-h6 {
-  font-size: 25px;
-  padding: 0;
-  margin: 0;
-  display: inline;
-}
-
-.vertical {
-  border-left: 1px solid #010645;
-  height: 240px;
-  display: inline-block;
-  padding: 0 0 0 0;
-}
-
-footer {
+  background: rgb(165, 189, 251);
+  border-radius: 20px;
+  border: none;
+  width: 700px;
+  padding: 15px;
+  display: block;
+  margin: 10px auto 5px;
   text-align: center;
-  text-decoration: none;
-  color: #010645;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
+  margin: 10px auto 15px;
 }
 
-footer a {
-  color: #7da1fa;
-  text-decoration: none;
-}
-
-a {
-  text-decoration: none;
-  color: #010645;
+.weather-forecast {
+  text-align: center;
 }
