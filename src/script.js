@@ -59,6 +59,19 @@ function displayForecast(response) {
 
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
 
+  tempMinDay0 = Math.round(response.data.daily[0].temp.min);
+  tempMaxDay0 = Math.round(response.data.daily[0].temp.max);
+  tempMinDay1 = Math.round(response.data.daily[1].temp.min);
+  tempMaxDay1 = Math.round(response.data.daily[1].temp.max);
+  tempMinDay2 = Math.round(response.data.daily[2].temp.min);
+  tempMaxDay2 = Math.round(response.data.daily[2].temp.max);
+  tempMinDay3 = Math.round(response.data.daily[3].temp.min);
+  tempMaxDay3 = Math.round(response.data.daily[3].temp.max);
+  tempMinDay4 = Math.round(response.data.daily[4].temp.min);
+  tempMaxDay4 = Math.round(response.data.daily[4].temp.max);
+  tempMinDay5 = Math.round(response.data.daily[5].temp.min);
+  tempMaxDay5 = Math.round(response.data.daily[5].temp.max);
+
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
@@ -123,8 +136,7 @@ function displayTemperature(response) {
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
   pressureElement.innerHTML = `${response.data.main.pressure}`;
   descriptionElement.innerHTML = weatherDescription;
-  sentenceElement.innerHTML = `${weatherDescription} today in ${city}. <br>
-  The temperature right now feels like ${feelsLikeData}°C.`;
+  sentenceElement.innerHTML = `The temperature right now feels like ${feelsLikeData}°C.`;
   celsiusLink.classList.add("active");
 
   displayDateTime();
@@ -165,13 +177,48 @@ function displayFahrenheitTemperature(event) {
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let fahrenheitMinTemperature = Math.round((tempMinData * 9) / 5 + 32);
   let fahrenheitMaxTemperature = Math.round((tempMaxData * 9) / 5 + 32);
+  let fahrenheitFeelsLikeTemperature = Math.round((feelsLikeData * 9) / 5 + 32);
+  let fahrenheitMinTempDay0 = Math.round((tempMinDay0 * 9) / 5 + 32);
+  console.log(fahrenheitMinTempDay0);
 
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  sentenceElement.innerHTML = `${descriptionData} today in ${cityData}. <br>
-  The minimum temperature will be ${fahrenheitMinTemperature}°F and <br>
-  the maximum temperature will be ${fahrenheitMaxTemperature}°F.`;
+  sentenceElement.innerHTML = `The temperature right now feels like ${fahrenheitFeelsLikeTemperature}°F.`;
   tempMinElement.innerHTML = `${fahrenheitMinTemperature}°F`;
   tempMaxElement.innerHTML = `${fahrenheitMaxTemperature}°F`;
+
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+        <div class="col-2">
+            <div class="weather-forecast-date">${formatDay(
+              forecastDay.dt
+            )}</div>
+            <img src="https://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png" alt="" width="42" />
+            <div class="weather-forecast-temperatures">
+                <span class="weather-forecast-temperature-min"> ${Math.round(
+                  forecastDay.temp.min
+                )}° </span>
+                <span class="weather-forecast-temperature-max"> ${Math.round(
+                  forecastDay.temp.max
+                )}° </span>
+            </div>
+        </div>
+  `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function displayCelsiusTemperature(event) {
@@ -180,9 +227,7 @@ function displayCelsiusTemperature(event) {
   fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  sentenceElement.innerHTML = `${descriptionData} today in ${cityData}. <br>
-  The minimum temperature will be ${tempMinData}°C and <br>
-  the maximum temperature will be ${tempMaxData}°C.`;
+  sentenceElement.innerHTML = `The temperature right now feels like ${feelsLikeData}°C.`;
   tempMinElement.innerHTML = `${tempMinData}°C`;
   tempMaxElement.innerHTML = `${tempMaxData}°C`;
 }
@@ -218,8 +263,21 @@ function displayCityThreeWeather(event) {
 let celsiusTemperature = null;
 let tempMinData = null;
 let tempMaxData = null;
+let feelsLikeData = null;
 let descriptionData = null;
 let cityData = null;
+let tempMinDay0 = null;
+let tempMaxDay0 = null;
+let tempMinDay1 = null;
+let tempMaxDay1 = null;
+let tempMinDay2 = null;
+let tempMaxDay2 = null;
+let tempMinDay3 = null;
+let tempMaxDay3 = null;
+let tempMinDay4 = null;
+let tempMaxDay4 = null;
+let tempMinDay5 = null;
+let tempMaxDay5 = null;
 
 let temperatureElement = document.querySelector("#temperature");
 let tempMaxElement = document.querySelector("#temp-max");

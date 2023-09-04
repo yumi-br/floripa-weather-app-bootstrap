@@ -16,6 +16,7 @@ h2 {
   padding: 10px;
   border: 1px solid #dadde1;
   border-radius: 15px;
+  width: 800px;
 }
 
 .card-default-cities {
@@ -110,12 +111,10 @@ a {
 
 .weather-details-1,
 .weather-details-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
   column-gap: 20px;
   row-gap: 0;
   padding: 2px;
-  margin: 0 auto;
   font-size: 16px;
   color: #010645;
   font-family: monospace;
@@ -129,62 +128,55 @@ a {
   border-radius: 20px;
   border: none;
   padding: 10px 20px;
-  width: 300px;
   display: block;
   margin-bottom: 10px;
 }
 
-.row1-col1-icon {
+.fa-temperature-arrow-down {
   vertical-align: middle;
-  margin-left: -25px;
-  width: 40px;
+  margin-left: 0px;
 }
 
-.row1-col1-description {
-  margin-left: -20px;
+.fa-temperature-arrow-up {
+  vertical-align: middle;
+  margin-left: 10px;
 }
 
-.row1-col1-info {
-  padding-left: 20px;
-}
-
-.row1-col2-icon {
-  margin-left: -50px;
+.fa-droplet {
   vertical-align: middle;
 }
 
 .row1-col2-description {
   vertical-align: middle;
+  margin-left: 5px;
 }
 
 .row1-col2-info {
-  padding-left: 100px;
+  padding-left: 10px;
 }
 
-.row2-col1-icon {
+.fa-wind {
   vertical-align: middle;
-  margin-left: -50px;
 }
 
 .row2-col1-description {
-  vertical-align: middle;
+  margin-left: 5px;
 }
 
 .row2-col1-info {
-  padding-left: 150px;
+  padding-left: 10px;
 }
 
-.row2-col2-icon {
+.fa-gauge-simple {
   vertical-align: middle;
 }
 
 .row2-col2-description {
   vertical-align: middle;
-  padding-left: 10px;
 }
 
 .row2-col2-info {
-  padding-left: 80px;
+  margin-left: 1px;
 }
 
 .card-forecast {

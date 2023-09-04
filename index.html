@@ -13,6 +13,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 
+    <script
+      src="https://kit.fontawesome.com/c21cb39b6a.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="src/styles.css" />
     <title>Floripa Weather App Bootstrap</title>
   </head>
@@ -95,67 +99,52 @@
 
             <h3 class="weather-description" id="weather-description">Clear</h3>
             <p id="sentence-description" class="sentence-description">
-              Clear today in Florianópolis. <br />
               The minimum temperature will be 16°C<br />
               and the maximum temperature will be 17°C.
             </p>
             <div class="row weather-details-1">
-              <div class="col-4 row1-col1">
-                <img
-                  src="IconSet/icon1-50.png"
-                  alt="Thermomether icon"
-                  class="row1-col1-icon"
-                />
-                <span class="row1-col1-description">Low|High</span>
-                <span class="row1-col1-info"
-                  ><strong
-                    ><span id="temp-min">15</span> |
-                    <span id="temp-max">28</span></strong
+              <div class="col-5 row1-col1">
+                <i class="fa-solid fa-temperature-arrow-down fa-2xl" style="color: #010645;"></i>
+                  <strong
+                    ><span id="temp-min"></span> 
+                <i class="fa-solid fa-temperature-arrow-up fa-2xl" style="color: #010645;"></i>
+                    <span id="temp-max"></span></strong
                   ></span
                 >
               </div>
-              <!--col-4 row1-col1-->
+              <!--col-6 row1-col1-->
 
-              <div class="col-4 row1-col2">
-                <img
-                  src="IconSet/icon2-50.png"
-                  alt="Drop icon"
-                  class="row1-col2-icon"
-                />
+              <div class="col-5 row1-col2">
+                <i
+                  class="fa-solid fa-droplet fa-2xl"
+                  style="color: #010645"
+                ></i>
                 <span class="row1-col2-description">Humidity</span>
                 <span class="row1-col2-info"
                   ><strong><span id="humidity"></span>%</strong></span
                 >
               </div>
-              <!--col-4 row1-col2-->
+              <!--col-6 row1-col2-->
             </div>
             <!--row weather-details-1-->
             <div class="row weather-details-2">
-              <div class="col-4 row2-col1">
-                <img
-                  src="IconSet/icon3-50.png"
-                  alt="Wind icon"
-                  class="row2-col1-icon"
-                />
+              <div class="col-5 row2-col1">
+                <i class="fa-solid fa-wind fa-2xl" style="color: #010645"></i>
                 <span class="row2-col1-description">Wind</span>
                 <span class="row2-col1-info"
                   ><strong><span id="wind-speed"></span>km/h</strong></span
                 >
               </div>
-              <!--col-4 row2-col1-->
+              <!--col-6 row2-col1-->
 
-              <div class="col-4 row2-col2">
-                <img
-                  src="IconSet/icon22-50.png"
-                  alt="Pressure icon"
-                  class="row2-col2-icon"
-                />
+              <div class="col-5 row2-col2">
+                <i class="fa-solid fa-gauge-simple fa-2xl" style="color: #010645;"></i>
                 <span class="row2-col2-description">Pressure</span>
                 <span class="row2-col2-info"
                   ><strong><span id="pressure"></span> hPa</strong></span
                 >
               </div>
-              <!--col-4 row2-col2-->
+              <!--col-6 row2-col2-->
             </div>
             <!--row weather-details-2-->
           </div>
