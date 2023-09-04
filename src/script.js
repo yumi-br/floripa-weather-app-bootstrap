@@ -92,10 +92,18 @@ function displayForecast(response) {
   console.log(forecastHTML);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayFahrenheitForecast(response) {
   console.log(response.data.daily[0].temp.min);
   console.log(response.data.daily[0].temp.max);
-  let forecast = response.data.daily;
+  let fahrenheitForecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
 
@@ -222,7 +230,7 @@ function displayFahrenheitTemperature(event) {
   tempMinElement.innerHTML = `${fahrenheitMinTemperature}°F`;
   tempMaxElement.innerHTML = `${fahrenheitMaxTemperature}°F`;
 
-  getFahrenheitForecast(coordinates);
+  getFahrenheitForecast(response.data.cood);
 }
 
 function displayCelsiusTemperature(event) {
