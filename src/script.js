@@ -53,6 +53,8 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
+  console.log(response.data.daily[0].temp.min);
+  console.log(response.data.daily[0].temp.max);
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
@@ -112,6 +114,8 @@ function getForecast(coordinates) {
 
 function displayTemperature(response) {
   console.log(response.data);
+  console.log(response.data.main.temp_min);
+  console.log(response.data.main.temp_max);
   let city = response.data.name;
   let country = response.data.sys.country;
   let weatherDescription = response.data.weather[0].main;
