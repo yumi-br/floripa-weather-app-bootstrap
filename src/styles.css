@@ -58,8 +58,9 @@ h2 {
 }
 
 .location {
-  font-size: xx-large;
+  font-size: x-large;
   font-weight: 400;
+  margin-bottom: 15px;
 }
 
 .current-weather img {
@@ -83,7 +84,7 @@ footer a {
 
 .current-weather .temperature {
   color: #010645;
-  font-size: 64px;
+  font-size: 50px;
   line-height: 1;
   font-weight: 400;
 }
@@ -91,7 +92,7 @@ footer a {
 .current-weather .units {
   position: relative;
   font-size: 16px;
-  top: -34px;
+  top: -24px;
 }
 
 .current-weather .active {
@@ -180,7 +181,7 @@ a {
 }
 
 .card-forecast {
-  background: rgb(165, 189, 251);
+  background: rgb(122, 155, 240);
   border-radius: 20px;
   border: none;
   width: 700px;
@@ -193,4 +194,8 @@ a {
 
 .weather-forecast {
   text-align: center;
+}
+
+.weather-forecast-temperature-max {
+  font-weight: 600;
 }
