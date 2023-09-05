@@ -56,8 +56,6 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily[0].temp.min);
-  console.log(response.data.daily[0].temp.max);
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
@@ -92,7 +90,6 @@ function displayForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
 
 function formatDay(timestamp) {
@@ -104,8 +101,6 @@ function formatDay(timestamp) {
 }
 
 function displayFahrenheitForecast(response) {
-  console.log(response.data.daily[0].temp.min);
-  console.log(response.data.daily[0].temp.max);
   let fahrenheitForecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
@@ -140,20 +135,15 @@ function displayFahrenheitForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
 
 function getForecast(coordinates) {
   let apiKey = "515c9ddbeb3cda9061acfab71031839e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${unit}`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
-  console.log(response.data);
-  console.log(response.data.main.temp_min);
-  console.log(response.data.main.temp_max);
   let city = response.data.name;
   let country = response.data.sys.country;
   let weatherDescription = response.data.weather[0].main;
