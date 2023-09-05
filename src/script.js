@@ -170,7 +170,7 @@ function displayTemperature(response) {
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
   pressureElement.innerHTML = `${response.data.main.pressure}`;
   descriptionElement.innerHTML = weatherDescription;
-  sentenceElement.innerHTML = `The temperature right now feels like ${feelsLikeData}°C.`;
+  sentenceElement.innerHTML = `The temperature right now feels like ${feelsLikeData}°.`;
   celsiusLink.classList.add("active");
 
   displayDateTime();
@@ -212,7 +212,7 @@ function displayFahrenheitTemperature(event) {
   let fahrenheitFeelsLikeTemperature = Math.round((feelsLikeData * 9) / 5 + 32);
 
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  sentenceElement.innerHTML = `The temperature right now feels like ${fahrenheitFeelsLikeTemperature}°F.`;
+  sentenceElement.innerHTML = `The temperature right now feels like ${fahrenheitFeelsLikeTemperature}°.`;
   unit = "imperial";
   searchCity(city);
 }
@@ -223,7 +223,7 @@ function displayCelsiusTemperature(event) {
   fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  sentenceElement.innerHTML = `The temperature right now feels like ${feelsLikeData}°C.`;
+  sentenceElement.innerHTML = `The temperature right now feels like ${feelsLikeData}°.`;
   unit = "metric";
   searchCity(city);
 }
