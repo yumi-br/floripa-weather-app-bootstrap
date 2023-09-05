@@ -56,6 +56,7 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
+  console.log(response);
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
@@ -144,6 +145,7 @@ function getForecast(coordinates) {
 }
 
 function displayTemperature(response) {
+  console.log(response);
   let city = response.data.name;
   let country = response.data.sys.country;
   let weatherDescription = response.data.weather[0].main;
@@ -162,8 +164,8 @@ function displayTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  tempMaxElement.innerHTML = `${tempMaxData}°C`;
-  tempMinElement.innerHTML = `${tempMinData}°C`;
+  tempMaxElement.innerHTML = `${tempMaxData}°`;
+  tempMinElement.innerHTML = `${tempMinData}°`;
   humidityElement.innerHTML = response.data.main.humidity;
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
   pressureElement.innerHTML = `${response.data.main.pressure}`;
