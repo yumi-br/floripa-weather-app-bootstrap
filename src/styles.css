@@ -44,6 +44,7 @@ h2 {
   text-align: center;
   font-size: large;
   font-weight: 400;
+  color: #000;
 }
 
 .current-weather {
@@ -191,12 +192,12 @@ a {
 footer {
   text-align: center;
   padding: 5px;
-  color: #010645;
+  color: #000;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
 }
 
 footer a {
-  color: rgba(1, 6, 69, 70%);
+  color: rgba(0, 0, 0, 70%);
   text-decoration: none;
 }
