@@ -154,7 +154,7 @@ function displayTemperature(response) {
   console.log(response.data);
   console.log(response.data.main.temp_min);
   console.log(response.data.main.temp_max);
-  let city = response.data.name;
+  city = response.data.name;
   let country = response.data.sys.country;
   let weatherDescription = response.data.weather[0].main;
 
@@ -239,28 +239,28 @@ function displayCelsiusTemperature(event) {
 function displayCityOneWeather(event) {
   event.preventDefault();
   let apiKey = "127b5ec2f6d0997638b7af4846d15bfb";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=eastbourne&appid=${apiKey}&units=${unit}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=eastbourne&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
 function displayCityTwoWeather(event) {
   event.preventDefault();
   let apiKey = "127b5ec2f6d0997638b7af4846d15bfb";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=florianopolis&appid=${apiKey}&units=${unit}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=florianopolis&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
 function displayCityFourWeather(event) {
   event.preventDefault();
   let apiKey = "127b5ec2f6d0997638b7af4846d15bfb";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=utrecht&appid=${apiKey}&units=${unit}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=utrecht&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
 function displayCityThreeWeather(event) {
   event.preventDefault();
   let apiKey = "127b5ec2f6d0997638b7af4846d15bfb";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=nagoya&appid=${apiKey}&units=${unit}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=nagoya&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
